@@ -1,0 +1,46 @@
+{
+  "name": "@kdcloudjs/create-kdesign-app",
+  "version": "1.0.1",
+  "description": "KDesign-Pro 命令行工具",
+  "title": "create-kdesign-app",
+  "keywords": [
+    "kdesign",
+    "kdesign-pro",
+    "cli",
+    "pro"
+  ],
+  "homepage": "https://pro.kingdee.design/",
+  "bugs": {
+    "url": "https://github.com/kdcloudone/create-kdesign-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kdcloudone/create-kdesign-app.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "contributors": [
+    "kdesign"
+  ],
+  "bin": {
+    "create-kdesign-app": "./index.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "browserslist": [
+    "last 2 versions",
+    "Firefox ESR",
+    "> 1%",
+    "ie >= 11"
+  ],
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^9.0.0",
+    "ora": "^5.4.1"
+  },
+  "license": "Apache-2.0"
+}
