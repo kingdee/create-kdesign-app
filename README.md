@@ -13,12 +13,19 @@ $ npm i -g @kdcloudjs/create-kdesign-app
 我们使用刚才安装的 create-kdesign-app 来快速初始化脚手架
 
 ```shell
-$ create-kdesign-app my-app
+$ create-kdesign-app                     
+$ #? Please input the project name： my-app   # 输入项目名称
+$ #? What version do you need? umi3           # 选择 umi 版本
+$ Initializing the KDesign App               # 开始初始化项目
+$ Receiving objects stage 100% complete    # 等待接收完成
+
+$ Initializing Done                          # 完成
 ```
 
 安装依赖：
 
 ```shell
+# 注：umi3默认使用npm, umi4默认使用pnpm, 可在config/config.ts中修改
 $ cd my-app && npm install
 ```
 
