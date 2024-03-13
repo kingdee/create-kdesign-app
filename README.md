@@ -10,16 +10,19 @@ $ npm i -g @kdcloudjs/create-kdesign-app
 
 ## 初始化脚手架
 
-我们使用刚才安装的 create-kdesign-app 来快速初始化脚手架
+我们使用刚才安装的 create-kdesign-app 来快速初始化脚手架，并提供3种模板
+- umi3：使用umi3为基础框架，兼容ie11
+- umi4：使用umi4为基础框架，不兼容ie11
+- simple：使用umi4为基础框架，并简化典型页面及功能
 
 ```shell
 $ create-kdesign-app                     
 $ #? Please input the project name： my-app   # 输入项目名称
-$ #? What version do you need? umi3           # 选择 umi 版本
-$ Initializing the KDesign App               # 开始初始化项目
-$ Receiving objects stage 100% complete    # 等待接收完成
+$ #? What template do you need? umi3...       # 选择模板
+$ Initializing the KDesign App                # 开始初始化项目
+$ Receiving objects stage 100% complete       # 等待接收完成
 
-$ Initializing Done                          # 完成
+$ Initializing Done                           # 完成
 ```
 
 安装依赖：
