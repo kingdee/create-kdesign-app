@@ -13,7 +13,7 @@ const {spawn} = child_process;
 
 const spinner = ora('Initializing the KDesign App');
 
-const url = 'git@gitee.com:kingdee/kdesign-pro.git';
+const url = 'http://gitee.com/kingdee/kdesign-pro.git';
 const umi4Branch = 'feat-4.0.0';
 const simpleBranch = 'feat-simple';
 
