@@ -12,7 +12,7 @@ program
   .usage('<projectName> | [options]')
   .version(pkg.version);
 
-create(process.argv.length > 2 ? process.argv?.[2] : 'my-app')
+create(process.argv.length > 2 ? process.argv?.[2] : 'my-app', pkg.version)
 
 program.parse(process.argv);
 

@@ -2,6 +2,7 @@
 
 require('colors');
 const fs = require('fs');
+const os = require('os');
 const child_process = require('child_process');
 const ora = require('ora');
 const remove = require('remove');
@@ -61,21 +62,18 @@ const cloneToTempDir = (clonePath, template) => {
 
 const editFileAndDelGit = async (projectName, downloadPath, template) => {
   const pwd = process.cwd();
+  const splitFlag = os.type() === 'Windows_NT' ? '\\' : '/'
   const fullDownloadPath = pwd + '/' + downloadPath;
 
-  try {
-    const options = {
-      files: [fullDownloadPath + '/**/*'],
-      ignore: template === 'simple' ? [] : [fullDownloadPath + '/README.md'],
-      from: /@kdcloudjs\/kdesign-pro|kdesign-pro|KDesign Pro/g,
-      to: projectName,
-    };
-    await replace(options);
-    remove.removeSync(fullDownloadPath + '/.git');
-    remove.removeSync(fullDownloadPath + '/.github');
-  } catch (error) {
-    console.error('Error occurred:', error);
-  }
+  const options = {
+    files: [fullDownloadPath + `${splitFlag}**${splitFlag}*`],
+    ignore: template === 'simple' ? [] : [fullDownloadPath + `${splitFlag}README.md`],
+    from: /@kdcloudjs\/kdesign-pro|kdesign-pro|KDesign Pro/g,
+    to: projectName,
+  };
+  await replace(options);
+  remove.removeSync(fullDownloadPath + `${splitFlag}.git`);
+  remove.removeSync(fullDownloadPath + `${splitFlag}.github`);
 };
 
 const clone = (answers) => {
@@ -100,7 +98,8 @@ const clone = (answers) => {
   });
 };
 
-const create = (projectName = '') => {
+const create = (projectName = '', version = '') => {
+  console.log(`${version}`.yellow);
   if (!['-V', '--version'].includes(projectName)) {
     inquirer
       .prompt([
@@ -126,9 +125,9 @@ const create = (projectName = '') => {
           name: 'template',
           message: 'Which template do you need?',
           choices: [
-            {name: 'umi3（使用umi3为基础框架，兼容ie11）', value: 'umi3'},
-            {name: 'umi4（使用umi4为基础框架，不兼容ie11）', value: 'umi4'},
-            {name: 'simple（使用umi4为基础框架，并简化典型页面及功能）', value: 'simple'},
+            {name: '1.umi3（使用umi3为基础框架，兼容ie11）', value: 'umi3'},
+            {name: '2.umi4（使用umi4为基础框架，不兼容ie11）', value: 'umi4'},
+            {name: '3.simple（使用umi4为基础框架，并简化典型页面及功能）', value: 'simple'},
           ],
           filter(val) {
             return val.toLowerCase();
