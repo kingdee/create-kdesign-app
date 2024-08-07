@@ -14,6 +14,8 @@ $ npm i -g @kdcloudjs/create-kdesign-app
 - umi3：使用umi3为基础框架，兼容ie11
 - umi4：使用umi4为基础框架，不兼容ie11
 - simple：使用umi4为基础框架，并简化典型页面及功能
+- plugin-vscode：vscode 插件模板
+- plugin-cui：自定义控件结合cui模板案例
 
 ```shell
 $ create-kdesign-app                     
