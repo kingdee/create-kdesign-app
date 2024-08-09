@@ -25,9 +25,7 @@ const cloneToTempDir = (clonePath, template) => {
       git = spawn('git', ['clone', '-b', 'feat-4.0.0', '--progress', url, clonePath]);
     }  else if (template === 'vscode') {
       git = spawn('git', ['clone', '-b', 'feat-vscode', '--progress', url, clonePath]);
-    }  else if (template === 'cui') {
-      git = spawn('git', ['clone', '-b', 'feat-cui', '--progress', url, clonePath]);
-    } else {
+    }  else {
       git = spawn('git', ['clone', '-b', 'feat-simple', '--progress', url, clonePath]);
     }
     spinner.text = `Initializing stage 0% complete`;
@@ -155,7 +153,6 @@ const create = (projectName = '', version = '') => {
             {name: '2. umi4（使用umi4为基础框架，不兼容ie11）', value: 'umi4'},
             {name: '3. simple（使用umi4为基础框架，并简化典型页面及功能）', value: 'simple'},
             {name: '4. plugin-vscode（vscode 插件模板）', value: 'vscode'},
-            {name: '5. plugin-cui（自定义控件结合cui模板案例）', value: 'cui'},
           ],
           filter(val) {
             return val.toLowerCase();

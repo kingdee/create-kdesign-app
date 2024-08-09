@@ -1,6 +1,6 @@
 {
   "name": "@kdcloudjs/create-kdesign-app",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "KDesign-Pro 命令行工具",
   "title": "create-kdesign-app",
   "keywords": [
